@@ -1,0 +1,1396 @@
+/* =========================================================
+   1. GLOBAL STYLES
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #3d3035;
+    background: #fffaf9;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    width: min(90%, 1180px);
+    margin: auto;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+
+/* =========================================================
+   2. COMMON STYLES
+========================================================= */
+
+.section-heading {
+    max-width: 650px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-subtitle {
+    color: #b76e79;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.section-heading h2,
+.about-content h2,
+.appointment-content h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #3b2930;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 span,
+.about-content h2 span,
+.appointment-content h2 span {
+    color: #b76e79;
+}
+
+.section-heading > p:last-child {
+    color: #766a6f;
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   3. HEADER
+========================================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 250, 249, 0.96);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(183, 110, 121, 0.12);
+}
+
+.nav-container {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #3b2930;
+}
+
+.logo span {
+    color: #c97b8a;
+    font-weight: 500;
+    margin: 0 3px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-link {
+    position: relative;
+    color: #51434a;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: #b76e79;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #b76e79;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-btn {
+    background: #b76e79;
+    color: #ffffff;
+    padding: 11px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #925661;
+    transform: translateY(-2px);
+}
+
+.menu-btn {
+    display: none;
+    width: 42px;
+    height: 42px;
+    background: #f4e2e4;
+    color: #9d5965;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   4. HERO SECTION
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-image: url("../Images/Homepage.png");
+    background-size: cover;
+    background-position: center 25%;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(35, 23, 28, 0.82) 0%,
+            rgba(35, 23, 28, 0.62) 42%,
+            rgba(35, 23, 28, 0.18) 100%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding-top: 70px;
+    color: #ffffff;
+}
+
+.hero-small-title {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+    color: #f3c7cd;
+}
+
+.hero h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(3.2rem, 7vw, 5.8rem);
+    font-weight: 400;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #f2b8c1;
+}
+
+.hero-description {
+    max-width: 590px;
+    color: #f5e9eb;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+/* =========================================================
+   5. BUTTONS
+========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.primary-btn {
+    background: #b76e79;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background: #925661;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(183, 110, 121, 0.25);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.secondary-btn:hover {
+    background: #ffffff;
+    color: #6f4650;
+}
+
+
+/* =========================================================
+   6. ABOUT SECTION
+========================================================= */
+
+.about {
+    background: #ffffff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+    padding: 0 1px 1px 0;
+   
+}
+
+.about-image::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 85%;
+    height: 85%;
+    border: 2px solid #e7c1c6;
+    z-index: 0;
+}
+
+.about-image img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 370px;
+    object-fit: contain;
+    display: block;
+}
+
+.experience-box {
+    position: absolute;
+    left: -15px;
+    bottom: 45px;
+    z-index: 2;
+    background: #ffffff;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 12px 35px rgba(64, 40, 47, 0.14);
+}
+
+.experience-box strong {
+    font-family: "DM Serif Display", serif;
+    font-size: 40px;
+    line-height: 1;
+    color: #b76e79;
+}
+
+.experience-box span {
+    font-size: 12px;
+    color: #6d6065;
+    line-height: 1.5;
+}
+
+.about-content > p:not(.section-subtitle) {
+    color: #74686d;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    margin: 28px 0 32px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 13px;
+    color: #55484e;
+}
+
+.feature-item i {
+    color: #b76e79;
+}
+
+
+/* =========================================================
+   7. SERVICES SECTION
+========================================================= */
+
+.services {
+    background: #fff7f7;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 35px 30px;
+    border: 1px solid #f0dfe1;
+    border-radius: 12px;
+    transition: 0.35s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(91, 51, 61, 0.10);
+    border-color: #dfb3ba;
+}
+
+.service-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8e7e9;
+    color: #b76e79;
+    border-radius: 50%;
+    font-size: 21px;
+    margin-bottom: 23px;
+}
+
+.service-card h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #3e3035;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #766a6f;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.service-card a {
+    color: #a45f6a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.service-card a i {
+    margin-left: 5px;
+    transition: 0.3s ease;
+}
+
+.service-card a:hover i {
+    margin-left: 9px;
+}
+
+
+/* =========================================================
+   8. OFFER SECTION
+========================================================= */
+
+.offer-section {
+    background: #3b2930;
+    color: #ffffff;
+    padding: 70px 0;
+}
+
+.offer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.offer-content {
+    max-width: 650px;
+}
+
+.offer-content .section-subtitle {
+    color: #e7aeb7;
+}
+
+.offer-content h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.offer-content p:not(.section-subtitle) {
+    color: #dbcdd0;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.offer-price {
+    min-width: 180px;
+    text-align: center;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+.offer-price span {
+    display: block;
+    font-size: 12px;
+    color: #dbcdd0;
+    margin-bottom: 4px;
+}
+
+.offer-price strong {
+    font-family: "DM Serif Display", serif;
+    font-size: 55px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   9. PACKAGES SECTION
+========================================================= */
+
+.packages {
+    background: #ffffff;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    align-items: stretch;
+}
+
+.package-card {
+    position: relative;
+    background: #fffafa;
+    border: 1px solid #eadadd;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(91, 51, 61, 0.10);
+}
+
+.package-card.popular {
+    border: 2px solid #b76e79;
+    transform: translateY(-10px);
+}
+
+.package-card.popular:hover {
+    transform: translateY(-16px);
+}
+
+.popular-label {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #b76e79;
+    color: #ffffff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.package-card h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #3d3035;
+    margin-bottom: 15px;
+}
+
+.package-price {
+    font-family: "DM Serif Display", serif;
+    color: #b76e79;
+    font-size: 42px;
+    margin-bottom: 5px;
+}
+
+.package-description {
+    color: #81747a;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.package-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.package-card li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #665960;
+    font-size: 13px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0e4e5;
+}
+
+.package-card li i {
+    color: #b76e79;
+}
+
+.package-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #b76e79;
+    border-radius: 13px;
+    color: #a45f6a;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.package-btn:hover {
+    background: #b76e79;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   10. GALLERY
+========================================================= */
+
+.gallery {
+    background: #fff7f7;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+}
+
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(55, 31, 38, 0.08);
+    transition: 0.3s ease;
+}
+
+.gallery-item img {
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+.gallery-item:hover::after {
+    background: rgba(55, 31, 38, 0);
+}
+
+
+/* =========================================================
+   11. WHY CHOOSE US
+========================================================= */
+
+.why-us {
+    background: #ffffff;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.why-card {
+    text-align: center;
+    padding: 30px 18px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translate Y(-5px);
+}
+
+.why-card > i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #f8e7e9;
+    color: #b76e79;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.why-card h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #3d3035;
+    margin-bottom: 8px;
+}
+
+.why-card p {
+    color: #766a6f;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   12. TESTIMONIALS
+========================================================= */
+
+.testimonials {
+    background: #fff7f7;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid #f0dfe1;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(91, 51, 61, 0.08);
+}
+.stars {
+    color: #c88a3d;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.testimonial-card > p {
+    color: #665960;
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.client {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.client-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #f4dfe2;
+    color: #a45f6a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "DM Serif Display", serif;
+    font-size: 20px;
+}
+
+.client h4 {
+    color: #44363c;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.client span {
+    color: #8a7c82;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   13. APPOINTMENT SECTION
+========================================================= */
+
+.appointment {
+    background: #3b2930;
+}
+
+.appointment-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.appointment-content {
+    color: #ffffff;
+}
+
+.appointment-content .section-subtitle {
+    color: #e7aeb7;
+}
+
+.appointment-content h2 {
+    color: #ffffff;
+}
+
+.appointment-content > p:not(.section-subtitle) {
+    color: #dbcdd0;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.appointment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.appointment-info > div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.appointment-info i {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e7aeb7;
+    border-radius: 50%;
+}
+
+.appointment-info span {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.appointment-info small {
+    color: #bdaeb2;
+    font-size: 11px;
+}
+
+.appointment-form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4c3e44;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #eadcdf;
+    outline: none;
+    padding: 12px 14px;
+    background: #fffafa;
+    color: #51434a;
+    font-size: 13px;
+    transition: 0.3s 
+    ease;
+    border-radius: 6px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #b76e79;
+    box-shadow: 0 0 0 3px rgba(183, 110, 121, 0.08);
+}
+
+.form-btn {
+    border: none;
+    width: 100%;
+}
+
+.form-message {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 12px;
+    min-height: 20px;
+}
+
+
+/* =========================================================
+   14. CONTACT
+========================================================= */
+
+.contact {
+    background: #ffffff;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    text-align: center;
+    padding: 30px 15px;
+    background: #fff7f7;
+    border: 1px solid #f0dfe1;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(91, 51, 61, 0.08);
+}
+
+.contact-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4e1e4;
+    color: #b76e79;
+    border-radius: 50%;
+}
+
+.contact-card h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #3d3035;
+}
+
+.contact-card p {
+    color: #766a6f;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   15. FOOTER
+========================================================= */
+
+.footer {
+    background: #2d2227;
+    color: #ffffff;
+    padding-top: 70px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+.footer-logo {
+    color: #ffffff;
+}
+
+.footer-about > p {
+    color: #bcaeb2;
+    font-size: 13px;
+    max-width: 280px;
+    margin: 15px 0 22px;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #5b4b51;
+    border-radius: 50%;
+    color: #d8c7cb;
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #b76e79;
+    border-color: #b76e79;
+    color: #ffffff;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.footer-links h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.footer-links a,
+.footer-links p {
+    color: #bcaeb2;
+    font-size: 12px;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #e8aeb7;
+}
+
+.footer-links p {
+    display: flex;
+    gap: 9px;
+}
+
+.footer-links p i {
+    color: #d18b95;
+    margin-top: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #44373c;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-bottom p {
+    color: #93858a;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   16. RESPONSIVE DESIGN — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        gap: 18px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+
+    .about-grid {
+        gap: 45px;
+    }
+
+    .services-grid,
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   17. RESPONSIVE DESIGN — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .section-padding {
+        padding: 75px 0;
+    }
+
+
+    /* Header */
+
+    .nav-container {
+        height: 70px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        padding: 25px 5%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        box-shadow: 0 15px 25px rgba(50, 30, 38, 0.08);
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 750px;
+        background-position: 65% 25%;
+    }
+
+    .hero-content {
+        padding-top: 70px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 13vw, 4.5rem);
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    /* About */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-image img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+    .about-content h2 {
+        font-size: 2.6rem;
+    }
+
+
+    /* Services */
+
+    .services-grid,
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .package-card.popular {
+        transform: none;
+    }
+
+    .package-card.popular:hover {
+        transform: translateY(-7px);
+    }
+
+
+    /* Offer */
+
+    .offer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .offer-price {
+        width: 100%;
+    }
+
+
+    /* Gallery */
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-item {
+        height: 230px;
+    }
+
+
+    /* Why */
+
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* Testimonials */
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Appointment */
+
+    .appointment-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .appointment-form-container {
+        padding: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Contact */
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* Footer */
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 25px;
+    }
+
+}
+
+
+/* =========================================================
+   18. RESPONSIVE DESIGN — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2,
+    .about-content h2,
+    .appointment-content h2 {
+        font-size: 2.3rem;
+    }
+
+    .hero {
+        min-height: 700px;
+    }
+
+    .hero h1 {
+        font-size: 3.1rem;
+    }
+
+    .hero-small-title {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .about-image {
+        padding-right: 12px;
+        padding-bottom: 12px;
+    }
+
+    .about-image img {
+        height: auto;
+    }
+
+    .experience-box {
+        left: 5px;
+        bottom: 30px;
+        padding: 15px;
+    }
+
+    .experience-box strong {
+        font-size: 32px;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 320px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offer-price strong {
+        font-size: 45px;
+    }
+
+    .appointment-form-container {
+        padding: 20px;
+    }
+}
+
